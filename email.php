@@ -174,9 +174,10 @@ $warnings = array();
 if ($form->is_cancelled()) {
     redirect(new moodle_url('/course/view.php?id='.$courseid));
 } else if ($data = $form->get_data()) {
-    if (empty($data->subject)) {
-        $warnings[] = get_string('no_subject', 'block_clampmail');
-    }
+    // uncomment to make subject required.
+    // if (empty($data->subject)) {
+    //     $warnings[] = get_string('no_subject', 'block_clampmail');
+    // }
 
     if (empty($data->mailto)) {
         $warnings[] = get_string('no_users', 'block_clampmail');
